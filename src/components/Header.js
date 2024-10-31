@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { HouseFill, Cart3 } from 'react-bootstrap-icons';
 import { useNavigate } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({searchQuery,setQuery}) {
     const navigate = useNavigate();
+
+
     return (
         <div className=' container-fluid mb-5 bg-primary text-white p-2' >
             <h4 className='p-2 m-0 d-inline text-decoration-underline cursor-pointer' role='button'><span style={{color:"#faee00",fontWeight:"bold" }}><span style={{fontSize:'32px'}}>𝓖</span>adget</span> 𝓢tore</h4>
@@ -13,7 +15,9 @@ export default function Header() {
                     <input
                         className='form-control ms-1  form-control-sm'
                         type='search'
+                        value={searchQuery}
                         placeholder='Search...'
+                        onChange={(e) =>  setQuery(e.target.value)}
                     />
                 </div>
                 <Cart3 className='me-md-3' role='button' onClick={() => navigate(`/cart`) } size={30} />

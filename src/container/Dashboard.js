@@ -1,11 +1,24 @@
-import React from 'react'
-import { ProductList } from '../data/ProductList'
-import ProductCart from '../components/ProductCart'
+import React, { useEffect, useState } from "react";
+import { ProductList } from "../data/ProductList";
+import ProductCart from "../components/ProductCart";
 
-export default function Dashboard() {
-    return (
-        <div className='container d-flex flex-wrap justify-content-center p-3'>
-           {ProductList.map((product) => <ProductCart {...product} key={product.id} />)}
-        </div>
-    )
+export default function Dashboard({ searchQuery }) {
+  const [filteredItems, setfilteredItems] = useState([]);
+  useEffect(() => {
+    setTimeout(() => {
+      const filterItems = ProductList.filter((item) =>
+        item.title.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())
+      );
+      console.log(filterItems);
+      setfilteredItems(filterItems);
+    },[2000]);
+  }, [searchQuery]);
+
+  return (
+    <div className="container d-flex flex-wrap justify-content-center p-3">
+      {filteredItems.map((item) => (
+        <ProductCart {...item} key={item.id} />
+      ))}
+    </div>
+  );
 }

@@ -7,14 +7,14 @@ export default function Success() {
   const navigate = useNavigate();
 
   
-        setTimeout(() => setPlaceOrder(true), 3000)
+        setTimeout(() => setPlaceOrder(true), 1000)
         
     return (
         
-        <div className='text-center mx-1'>
+        <div className='text-center mx-1 vh-100'>
             {placeOrder && <div className='card mx-auto' style={{maxWidth:400, height:500}}>
                  <div className='mb-5'>
-                    <PatchCheckFill className='mt-5 text-success' style={{ fontSize:120}}/>
+                    <PatchCheckFill className='mt-5 text-success' style={{fontSize:120}}/>
                  </div>
                  <div className='mt-5'>
                     <SendCheck className='text-success' style={{fontSize:48}} /><h3>Order has been Placed</h3>

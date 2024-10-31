@@ -46,7 +46,7 @@ export const ProductList = [
     "stock": 36,
     "brand": "Samsung",
     "category": "smartphones",
-    "thumbnail": "https://iode.tech/wp-content/uploads/2020/09/Samsung-iode-S9-1000x1000-1.png",
+    "thumbnail": "https://images.tokopedia.net/img/cache/700/product-1/2018/5/19/900587/900587_df2a11c9-009d-4106-a59a-9abafbcb3d77",
     "images": [
     "https://i.dummyjson.com/data/products/3/1.jpg"
     ]
