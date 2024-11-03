@@ -11,11 +11,11 @@ export default function Dashboard({ searchQuery }) {
       );
       console.log(filterItems);
       setfilteredItems(filterItems);
-    },[2000]);
+    },[1000]);
   }, [searchQuery]);
 
   return (
-    <div className="container d-flex flex-wrap justify-content-center p-3">
+    <div className="container min-vh-100 d-flex flex-wrap justify-content-center p-3">
       {filteredItems.map((item) => (
         <ProductCart {...item} key={item.id} />
       ))}
